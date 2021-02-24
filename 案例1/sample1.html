@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+    分时显示不同的图片不同时间不同问候语
+    思路
+    根据系统的不同时间来判断，需要内置对象date
+    利用多分支语句，来设置不同的图片
+    需要图片并且根据时间切换图片，需要操作src属性
+    需要div元素，显示不同问候语修改内容
+    -->
+
+    <div>上午好</div>
+    </br>
+    <img src='sw.jpg'alt=""title="">
+    <script>
+        //获取元素
+    var greet=document.querySelector('div');
+    var img=document.querySelector('img');
+        //得到当前小数时
+    var date=new Date();
+    var h=date.getHours();
+        
+    if(h<12){
+        img.src='sw.jpg';
+        greet.innerText='上午好，好好写代码';
+    }else if(h<18){
+        img.src='xw.jpg';
+        greet.innerText='下午好，好好写代码';
+    }else{
+        img.src='ws.jpg';
+        greet.innerText='晚上好，好好写代码';
+    }
+
+    </script>
+
+</body>
+</html>
